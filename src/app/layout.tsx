@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/Header";
+import { Widget } from "@/components/Widget";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +15,8 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="pt-br">
       <body>
+        <Header />
+        <Widget />
         {children}
       </body>
     </html>

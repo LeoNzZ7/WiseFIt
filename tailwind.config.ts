@@ -7,8 +7,21 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {}
+     extend: {
+      colors: {
+        brand: {
+          100: '#1abc9c',
+          200: '#8e44ad',
+          300: '#f1c40f',
+          400: '#34495e',
+          500: '#2ecc71',
+        }
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tailwind-scrollbar')
+  ],
 };
 export default config;
