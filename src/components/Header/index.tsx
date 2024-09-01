@@ -1,6 +1,8 @@
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
 import Link from "next/link"
 import { FaRegUserCircle } from "react-icons/fa"
-import { IoFitness } from "react-icons/io5"
+import { FiUserPlus } from "react-icons/fi"
+import { IoEnterOutline, IoFitness } from "react-icons/io5"
 
 export const Header = () => {
     return (
@@ -39,13 +41,30 @@ export const Header = () => {
                     </nav>
                 </div>
                 <div className="flex items-center cursor-pointer" >
-                    <button>
-                        <FaRegUserCircle
-                            size={28}
-                            color="#34495e" />
-                    </button>
+                    <Menu >
+                        <MenuButton>
+                            <FaRegUserCircle size={28} color="#34495e" />
+                        </MenuButton>
+                        <MenuItems
+                            anchor="bottom"
+                            className="bg-neutral-100 w-[140px] rounded-[6px] font-bold flex items-center justify-center flex-col mt-1 drop-shadow border border-neutral-300"
+                        >
+                            <MenuItem>
+                                <Link href="/login" className="flex justify-between w-full hover:bg-brand-100 px-1 py-2 border-0 border-b border-neutral-300 transition-colors">
+                                    Registre-se
+                                    <FiUserPlus size={20} />
+                                </Link>
+                            </MenuItem>
+                            <MenuItem>
+                                <Link href="/register" className="flex justify-between w-full hover:bg-brand-100 px-1 py-2 border-0 transition-colors">
+                                    Entrar
+                                    <IoEnterOutline size={20} />
+                                </Link>
+                            </MenuItem>
+                        </MenuItems>
+                    </Menu>
                 </div>
             </div>
-        </header>
+        </header >
     )
 }
